@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Planner</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/static/shopping_list.js" defer></script>
+    <script src="/static/map.js" defer></script>
+    <script src="/static/items.js"></script>
+    <script src="/static/categorize.js" defer></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#shopping_list">Shopping List</a></li>
+                <li class="tab col s3" onclick="showMap()"><a href="#map">Map</a></li>
+            </ul>
+        </div>
+        <div id="shopping_list" class="col s12">
+            <ul class="browser-default" id="shopping_list_ul"></ul>
+            <div class="input-field" style="width: 50%; margin: auto;">
+                <input id="to_add" type="text">
+                <label for="to_add">Add Item</label>
+                <button class="waves-effect waves-light btn" onclick="addElement()" style="margin-right: 50%; margin-left: 50%">Add</button>
+            </div>
+            <h4>Categories</h4>
+            <ul class="browser-default" id="categories"></ul>
+        </div>
+        <div id="map" class="col s12">
+            <div class="input-field">
+                <select id="store_selection" onchange="showMap(this)">
+                    <option value="" disabled selected>Choose your store</option>
+                    {% for store in stores %}
+                        <option value="{{ store }}">{{ store }}</option>
+                    {% endfor %}
+                </select>
+                <label>Materialize Select</label>
+            </div>
+            <div id="showCanvas">
+                <canvas id="mapCanvas" width="500" height="500"></canvas>
+            </div>
+            <div id="item_not_found"></div>
+        </div>
+    </div>   
+    <script>
+        M.AutoInit();
+    </script> 
+</body>
+</html>
