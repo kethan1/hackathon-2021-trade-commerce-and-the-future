@@ -1,0 +1,29 @@
+{
+    "items_positioning": "legacy",
+    "items": {
+        "cake": [10, 18],
+        "cupcakes": [11, 18],
+        "muffins": [12, 18],
+        "donuts": [13, 18],
+        "bagels": [12, 16],
+        "bread": [14, 16],
+        "chocolate": [16, 12],
+        "milk": [4, 16],
+        "cheese": [3, 16],
+        "butter": [7, 16],
+        "sugar": [1, 14],
+        "eggs": [2, 18],
+        "tomato": [3, 18],
+        "onion": [4, 18],
+        "potato": [5, 18],
+        "carrot": [6, 18],
+        "cucumber": [7, 18],
+        "banana": [1, 12],
+        "apple": [2, 12],
+        "orange": [3, 12],
+        "grape": [4, 12],
+        "pear": [5, 12],
+        "strawberry": [6, 12],
+        "blueberry": [7, 12]
+    }
+}

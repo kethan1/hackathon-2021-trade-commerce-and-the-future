@@ -17,15 +17,19 @@ for (let item of shopping_list) {
 
 function addElement() {
     add_input.value = add_input.value.trim();
-    if (add_input.value !== "") {
-        let new_item = document.createElement("li");
-        new_item.innerHTML = add_input.value + `  <a style="cursor: pointer;" onclick="deleteElement(this)">❌</a>`;
-        shopping_list_ul.appendChild(new_item);
-        shopping_list.push(add_input.value);
-        localStorage.setItem("shoppingList", JSON.stringify(shopping_list));
-        add_input.value = "";
+    if (!shopping_list.includes(add_input.value)) {
+        if (add_input.value !== "") {
+            let new_item = document.createElement("li");
+            new_item.innerHTML = add_input.value + `  <a style="cursor: pointer;" onclick="deleteElement(this)">❌</a>`;
+            shopping_list_ul.appendChild(new_item);
+            shopping_list.push(add_input.value);
+            localStorage.setItem("shoppingList", JSON.stringify(shopping_list));
+        }
+        categorize();
+    } else {
+        M.toast({html: "Item already in the list."})
     }
-    categorize();
+    add_input.value = "";
 }
 
 function deleteElement(elem) {
