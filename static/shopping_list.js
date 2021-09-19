@@ -34,7 +34,6 @@ function deleteElement(elem) {
     let elem_copy = elem;
     while ((elem_copy=elem_copy.previousElementSibling) !== null) ++index;
     shopping_list.splice(index, 1);
-    console.log(index)
     localStorage.setItem("shoppingList", JSON.stringify(shopping_list));
     elem.remove();
     categorize();

@@ -18,13 +18,11 @@ function categorize() {
             }
         }        
     }
-    console.log(show)
     for (let category in show) {
         let items_in_str = "";
         for (let item of show[category]) {
             items_in_str += `<li>${item}</li>`;
         }
-        console.log(items_in_str)
         categories.innerHTML += `<li><b style="font-size: 1.25em">${category}</b>
             <ul class="browser-default">
                 ${items_in_str}
