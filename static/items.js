@@ -42,6 +42,7 @@ let catergory_dict = {
     "bread": "Bakery",
     "eggs": "Dairy",
     "milk": "Dairy",
+    "cake": "Dairy",
     "yogurt": "Dairy",
     "butter": "Dairy",
     "cheese": "Dairy",
